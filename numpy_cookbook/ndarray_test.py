@@ -4,9 +4,6 @@ import numpy as np
 import sys
 import time
 
-__author__ = 'JiaweiMao'
-__version__ = '1.0.0'
-
 
 def test_ndarray_attributes():
     '''nparray 属性：
@@ -24,38 +21,7 @@ ndarray.data	包含实际的数组元素。一般不使用该属性，而使用�
     assert a.size == 15
 
 
-def test_create_list():
-    '''通过list 创建 ndarray'''
-    a = np.array([2, 3, 4])
-    assert a.size == 3
 
-    b = np.array([1.2, 3.5, 5.1])
-    assert b.size == 3
-    assert b.dtype == 'float64'
-
-
-def test_create_doublearray():
-    '''创建二维数组'''
-    b = np.array([(1.5, 2, 3), (4, 5, 6)])
-    assert b.dtype == 'float64'
-    assert b.size == 6
-    assert b.shape == (2, 3)
-
-
-def test_createWithType():
-    b = np.array([[1, 2], [3, 4]], dtype=complex)
-    print(b)
-
-
-def test_zeros():
-    '''创建0数组'''
-    a = np.zeros((3, 4))
-    print(a)
-
-
-def test_ones():
-    a = np.ones((3))
-    assert a[0] == 1
 
 
 def test_minus():

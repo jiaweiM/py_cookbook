@@ -26,7 +26,9 @@ def test_mode(afile):
 
 
 def test_read(afile):
-    '''返回文本的所有文本'''
+    """
+    return all content of a file
+    """
     a_string = afile.read()
     assert a_string == 'line1\nline2\nline3'
 
