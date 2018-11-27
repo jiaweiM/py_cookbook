@@ -1,6 +1,32 @@
 import pytest
 
 
+def test_concanate():
+    '''使用加号连接字符串，称为字符串拼接'''
+    first_name = 'zhang'
+    last_name = 'chen'
+    full_name = first_name + " " + last_name
+    assert full_name == 'zhang chen'
+
+
+def test_rstrip():
+    '''移除字符串后面的空白'''
+    lang = ' python '
+    assert lang.rstrip() == ' python'
+
+
+def test_lstrip():
+    '''移除字符串前面的空白'''
+    lang = ' python '
+    assert lang.lstrip() == 'python '
+
+
+def test_strip():
+    '''移除字符串前后的空白'''
+    lang = ' python '
+    assert lang.strip() == 'python'
+
+
 def test_multi():
     a = 'm'
     b = a * 3
@@ -91,9 +117,18 @@ def test_slice():
         str[1.5]
 
 
-def test_upper():
+def test_upper_lower():
+    '''大小写操作'''
     a = "lower"
     assert a.upper() == "LOWER"
+    name = 'Zhang Chen'
+    assert name.lower() == 'zhang chen'
+
+
+def test_title():
+    """title() 以首字母大写的方式显示每个单词"""
+    name = "zhang chen"
+    assert name.title() == 'Zhang Chen'
 
 
 '''

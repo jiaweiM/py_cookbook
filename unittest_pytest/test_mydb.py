@@ -1,5 +1,6 @@
-from .mydb import MyDB
 import pytest
+
+from .mydb import MyDB
 
 
 @pytest.fixture(scope="module")

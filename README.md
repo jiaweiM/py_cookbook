@@ -1,0 +1,1 @@
+Studying code for python and data mining

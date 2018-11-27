@@ -1,8 +1,7 @@
 import sys
 
 import pytest
-
-from tutorial.unittest.pytest import mathlib
+from unittest_pytest import mathlib
 
 
 @pytest.mark.skip(reason="I don't want to run this test now")

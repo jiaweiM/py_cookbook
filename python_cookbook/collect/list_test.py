@@ -7,26 +7,52 @@ https://www.programiz.com/python-programming/list
 
 def test_raw():
     xs = [3, 1, 2]  # Create a list
-    print(xs, xs[2])  # Prints "[3, 1, 2] 2"
-    print(xs[-1])  # Negative indices count from the end of the list; prints "2"
+    assert str(xs) == '[3, 1, 2]'
+    assert xs[2] == 2
+    assert xs[-1] == 2  # Negative indices count from the end of the list; prints "2"
     xs[2] = 'foo'  # Lists can contain elements of different types
-    print(xs)  # Prints "[3, 1, 'foo']"
+    assert xs[2] == 'foo'
     xs.append('bar')  # Add a new element to the end of the list
-    print(xs)  # Prints "[3, 1, 'foo', 'bar']"
+    assert xs == [3, 1, 'foo', 'bar']
     x = xs.pop()  # Remove and return the last element of the list
-    print(x, xs)  # Prints "bar [3, 1, 'foo']"
+    assert x == 'bar'
+    assert xs == [3, 1, 'foo']
 
 
 def test_slice():
+    '''
+    通过 [start:end] 切片 list
+    '''
     nums = list(range(5))  # range is a built-in function that creates a list of integers
-    print(nums)  # Prints "[0, 1, 2, 3, 4]"
-    print(nums[2:4])  # Get a slice from index 2 to 4 (exclusive); prints "[2, 3]"
-    print(nums[2:])  # Get a slice from index 2 to the end; prints "[2, 3, 4]"
-    print(nums[:2])  # Get a slice from the start to index 2 (exclusive); prints "[0, 1]"
-    print(nums[:])  # Get a slice of the whole list; prints "[0, 1, 2, 3, 4]"
+    assert nums == [0, 1, 2, 3, 4]
+    assert nums[2:4] == [2, 3]  # Get a slice from index 2 to 4
+    assert nums[2:] == [2, 3, 4]
+    assert nums[:2] == [0, 1]  # Get a slice from the start to index 2 (exclusive); prints "[0, 1]"
+    assert nums[:] == [0, 1, 2, 3, 4]  # Get a slice of the whole list
     print(nums[:-1])  # Slice indices can be negative; prints "[0, 1, 2, 3]"
     nums[2:4] = [8, 9]  # Assign a new sublist to a slice
     print(nums)  # Prints "[0, 1, 8, 9, 4]"
+
+    my_list = ['p', 'r', 'o', 'g', 'r', 'a', 'm', 'i', 'z']
+    # elements 3rd to 5th
+    assert my_list[2:5] == ['o', 'g', 'r']
+
+    # elements beginning to 4th
+    assert my_list[:-5] == ['p', 'r', 'o', 'g']
+
+    # elements 6th to end
+    assert my_list[5:] == ['a', 'm', 'i', 'z']
+
+    # elements beginning to end
+    assert my_list[:] == ['p', 'r', 'o', 'g', 'r', 'a', 'm', 'i', 'z']
+
+
+def test_len():
+    """
+    获得列表的长度
+    """
+    animals = ['cat', 'dog', 'monkey']
+    assert len(animals) == 3
 
 
 def test_loop():
@@ -38,7 +64,8 @@ def test_loop():
 
 def test_demo_1():
     shoplist = ['apple', 'mango', 'carrot', 'banana']
-    print('I have', len(shoplist), 'items to purchase.')
+    assert len(shoplist) == 4
+
     print('These items are:', end=' ')
     for item in shoplist:
         print(item, end=' ')
@@ -116,26 +143,6 @@ def test_get_index_negative():
 
 
 '''
-通过 [start:end] 切片 list
-'''
-
-
-def test_slice():
-    my_list = ['p', 'r', 'o', 'g', 'r', 'a', 'm', 'i', 'z']
-    # elements 3rd to 5th
-    assert my_list[2:5] == ['o', 'g', 'r']
-
-    # elements beginning to 4th
-    assert my_list[:-5] == ['p', 'r', 'o', 'g']
-
-    # elements 6th to end
-    assert my_list[5:] == ['a', 'm', 'i', 'z']
-
-    # elements beginning to end
-    assert my_list[:] == ['p', 'r', 'o', 'g', 'r', 'a', 'm', 'i', 'z']
-
-
-'''
 List are mutable, 即可以动态修改其值，不像 string 和 tuple，是不能修改的。
 '''
 
@@ -159,12 +166,11 @@ def test_modify():
 通过 * 将一个 list 重复 n遍，生成一个新的 list.
 '''
 
-'''
-append() 添加单个元素。append() 不返回值，而是修改原 list.
-'''
-
 
 def test_append_element():
+    '''
+    append() 添加单个元素。append() 不返回值，而是修改原 list.
+    '''
     # animal list
     animal = ['cat', 'dog', 'rabbit']
 
@@ -259,13 +265,11 @@ def test_multiply():
     assert ["re"] * 3 == ["re", "re", "re"]
 
 
-'''
-insert(index, element), 在指定位置插入元素，后面的元素依次后移
-[2:2], 通过这种空的 slice 可以一次插入多个元素
-'''
-
-
 def test_insert():
+    '''
+    insert(index, element), 在指定位置插入元素，后面的元素依次后移
+    [2:2], 通过这种空的 slice 可以一次插入多个元素
+    '''
     odd = [1, 9]
 
     odd.insert(1, 3)
@@ -284,12 +288,10 @@ def test_insert_tuple():
     assert mixed_list == [{1, 2}, (3, 4), [5, 6, 7]]
 
 
-'''
-通过 del 关键字删除 list的元素
-'''
-
-
 def test_del():
+    '''
+    通过 del 关键字删除 list的元素
+    '''
     my_list = ['p', 'r', 'o', 'b', 'l', 'e', 'm']
 
     # 删除一个
@@ -311,16 +313,15 @@ pop() 删除指定位置的值，如果不提供参数，返回并删除最后�
 clear() 清空 list
 '''
 
-'''
-The remove() method searches for the given element in the list and removes the first matching element.
-list.remove(element)
-
-如果 list 中不存在 element，抛出 ValueError
-不返回任何值。
-'''
-
 
 def test_remove():
+    '''
+    The remove() method searches for the given element in the list and removes the first matching element.
+    list.remove(element)
+
+    如果 list 中不存在 element，抛出 ValueError
+    不返回任何值。
+    '''
     my_list = ['p', 'r', 'o', 'b', 'l', 'e', 'm']
     my_list.remove('p')
     assert my_list == ['r', 'o', 'b', 'l', 'e', 'm']
@@ -422,15 +423,13 @@ def test_count_tuple():
     assert count == 1
 
 
-'''
-list.pop(index=-1)
-移除并返回指定位置的元素
-如果 index 不在 list 范围，抛出 IndexError
-index 默认为-1，即移除并返回最后一个元素。
-'''
-
-
 def test_pop():
+    '''
+    list.pop(index=-1)
+    移除并返回指定位置的元素
+    如果 index 不在 list 范围，抛出 IndexError
+    index 默认为-1，即移除并返回最后一个元素。
+    '''
     # programming language list
     language = ['Python', 'Java', 'C++', 'French', 'C']
 
@@ -452,13 +451,11 @@ def test_pop():
     assert language == ['Java', 'C++']
 
 
-'''
-list.reverse()
-将 list 中的元素倒序
-'''
-
-
 def test_reverse():
+    """
+    list.reverse()
+    将 list 中的元素倒序
+    """
     # Operating System List
     os = ['Windows', 'macOS', 'Linux']
     # List Reverse
@@ -494,3 +491,28 @@ def test_reverse_reversed():
     # Printing Elements in Reversed Order
     for o in reversed(os):
         print(o)
+
+
+def test_sort():
+    cars = ['bmw', 'audi', 'toyota', 'subaru']
+    cars.sort()
+    assert cars == ['audi', 'bmw', 'subaru', 'toyota']
+
+    cars.sort(reverse=True)
+    assert cars == ['toyota', 'subaru', 'bmw', 'audi']
+
+
+def test_sorted():
+    '''sorted() 函数生成一个新的列表，不影响原列表'''
+    cars = ['bmw', 'audi', 'toyota', 'subaru']
+
+    sorted_cars = sorted(cars)
+    assert sorted_cars == ['audi', 'bmw', 'subaru', 'toyota']
+
+    sorted_cars = sorted(cars, reverse=True)
+    assert sorted_cars == ['toyota', 'subaru', 'bmw', 'audi']
+
+
+def test_parse():
+    squares = [value ** 2 for value in range(5)]
+    assert squares == [0, 1, 4, 9, 16]
