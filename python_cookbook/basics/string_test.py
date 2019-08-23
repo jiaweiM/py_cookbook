@@ -57,7 +57,8 @@ def test_format_2():
     # 使用（＾）　定义'__hello__' 字符串长度为11
     print('{0:_^11}'.format('hello'))
     # 基于关键词输出 'Swaroop wrote A Byte of Python'
-    print('{name} wrote {book}'.format(name='Swaroop', book='A Byte of Python'))
+    print('{name} wrote {book}'.format(
+        name='Swaroop', book='A Byte of Python'))
 
 
 '''创建字符串，可以用单引号，双引号，甚至三引号
@@ -131,13 +132,11 @@ def test_title():
     assert name.title() == 'Zhang Chen'
 
 
-'''
-String 是 immutable的，所以不能修改，只能重复赋值.
-不能从 string 中删除字符，但可以删除整个字符串。
-'''
-
-
 def test_modify():
+    '''
+    String 是 immutable的，所以不能修改，只能重复赋值.
+    不能从 string 中删除字符，但可以删除整个字符串。
+    '''
     my_str = 'programiz'
 
     with pytest.raises(TypeError):
@@ -213,7 +212,8 @@ def test_string_format_order():
 
 
 def test_string_format_keyword():
-    print('Hello {name}, {greeting}'.format(greeting='Goodmorning', name='John'))
+    print('Hello {name}, {greeting}'.format(
+        greeting='Goodmorning', name='John'))
 
 
 def test_string_format_printf():

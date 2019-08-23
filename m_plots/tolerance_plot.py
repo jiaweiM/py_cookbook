@@ -2,10 +2,10 @@ import matplotlib.pyplot as plt
 from matplotlib.ticker import FuncFormatter
 import numpy as np
 
-total_count = [1031758, 1097033, 1107879, 1116712]
-target_count = [878386, 843200, 818376, 803529]
-decoy_count = [153372, 253833, 289503, 313183]
-id_count = [610017, 434675, 358736, 313470]
+total_count = [1033794, 1097757, 1107669, 1116319]
+target_count = [884135, 843450, 819229, 787480]
+decoy_count = [149659, 254307, 288440, 328839]
+id_count = [620003, 440872, 363561, 283440]
 
 ratio = np.array(decoy_count) / np.array(total_count)
 
@@ -51,4 +51,6 @@ bars, labels = ax.get_legend_handles_labels()
 bars2, labels2 = ax2.get_legend_handles_labels()
 # ax2.legend(bars + bars2, labels + labels2, loc=0)
 
-plt.show()
+plt.savefig(r"Z:\MaoJiawei\dataset-2\result\msfragger_20180316\open_tolerance_test\tol.png", dpi=150)
+
+# plt.show()

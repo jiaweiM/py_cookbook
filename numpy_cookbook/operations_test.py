@@ -22,6 +22,12 @@ def test_add():
     nptest.assert_array_equal(c, np.array([3, 4, 5]))
 
 
+def test_add_array_num():
+    a = np.arange(4)
+    b = a + 4
+    nptest.assert_array_equal(b, np.array([4, 5, 6, 7]))
+
+
 def test_add_2d():
     a = np.array([[1, 2, 3], [1, 2, 3]])
     b = 2
@@ -50,6 +56,12 @@ def test_mul():
     nptest.assert_array_equal(c, np.array([1, 4, 9]))
 
 
+def test_mul_array_num():
+    a = np.arange(4)
+    b = a * 2
+    nptest.assert_array_equal(b, np.array([0, 2, 4, 6]))
+
+
 def test_division():
     '''向量除，每个元素依次相除'''
     a = np.array([1, 2, 3])
@@ -67,12 +79,12 @@ def test_dot_product():
     c = a.dot(b)
     assert c == 14
 
+
 def test_mul_vector_scalar():
     '''
     标量和矢量相乘
     :return:
     '''
-    
 
 
 def test_select():
