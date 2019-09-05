@@ -2,5 +2,10 @@ import pandas as pd
 
 
 class TestRead():
-    df = pd.read_csv('sample.csv')
-    print(df)
+    def test_csv(self):
+        df = pd.read_csv('sample.csv')
+        print(df)
+
+
+class TestWrite():
+    pass

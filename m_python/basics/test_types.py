@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 def test_numbers():
     x = 3
     print(type(x))  # Prints "<class 'int'>"
