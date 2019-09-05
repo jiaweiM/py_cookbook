@@ -1,4 +1,3 @@
-import numpy as np
 import pandas as pd
 
 
@@ -10,5 +9,3 @@ def test_iat():
 
     df.iat[1, 2] = 10  # setter
     assert df.iat[1, 2] == 10
-
-
