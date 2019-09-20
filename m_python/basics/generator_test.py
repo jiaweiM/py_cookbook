@@ -1,21 +1,31 @@
-# -*- coding: utf-8 -*-
+import pytest
+
 
 def my_gen():
     n = 1
-    print('This is printed first')
     yield n
 
     n += 1
-    print('This is printed second')
     yield n
 
     n += 1
-    print('This is printed at last')
     yield n
 
 
-a = my_gen()
-n = next(a)
-print(n)
-n = next(a)
-print(n)
+def test_gen():
+    a = my_gen()
+    n = next(a)
+    assert n == 1
+    n = next(a)
+    assert n == 2
+    n = next(a)
+    assert n == 3
+    with pytest.raises(StopIteration):
+        next(a)
+
+
+def rev_str(my_str):
+    length = len(my_str)
+    for i in range(length - 1, -1, -1):
+        yield my_str[i]
+
