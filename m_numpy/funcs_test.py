@@ -43,7 +43,8 @@ def test_linspace():
     a = np.linspace(2.0, 3.0, num=5, endpoint=False)  # endpoint 是否包含最后一个值
     nt.assert_array_almost_equal(a, np.array([2., 2.2, 2.4, 2.6, 2.8]), 2)
 
-    a = np.linspace(2.0, 3.0, num=5, retstep=True)  # 以 (samples, step) 的形式，同时返回 step
+    # 以 (samples, step) 的形式，同时返回 step
+    a = np.linspace(2.0, 3.0, num=5, retstep=True)
     nt.assert_almost_equal(a[1], 0.25, 3)
 
 

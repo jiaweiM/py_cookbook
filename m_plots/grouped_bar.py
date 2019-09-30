@@ -1,6 +1,7 @@
 import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np
+import pytest
 
 df = pd.read_csv(r"Z:\MaoJiawei\phos\ions.csv", header=None,
                  names=["Ion Type", "Charge", "Ion", "Low Freq", "High Freq"])

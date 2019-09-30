@@ -40,7 +40,8 @@ def test_dtype_attributes():
 
 
 def test_record():
-    t = np.dtype([('name', np.str_, 40), ('numitems', np.int32), ('price', np.float32)])
+    t = np.dtype(
+        [('name', np.str_, 40), ('numitems', np.int32), ('price', np.float32)])
     print(t)
 
 

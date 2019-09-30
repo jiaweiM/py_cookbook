@@ -50,6 +50,8 @@ def test_zeros():
     """
     创建全部包含 0 的数组
     """
+    x = np.zeros(5)
+    print(x)
     a = np.zeros((3, 3))
     assert a.dtype == np.float64
     # assert a == np.array([[0, 0, 0], [0, 0, 0], [0, 0, 0]], dtype=np.float64)
@@ -64,6 +66,9 @@ def test_ones():
     assert a.dtype == np.float64
     assert a[0] == 1
 
+    a = np.ones(5)
+    print(a)
+
 
 def test_empty():
     """
@@ -71,3 +76,34 @@ def test_empty():
     """
     a = np.empty([2, 2])
     assert a.shape == (2, 2)
+
+    # array with shape=(3, 2), values of the array are random
+    a = np.empty([3, 2], dtype=np.int32)
+    assert a.shape == (3, 2)
+    assert a.dtype == np.int32
+
+    a = np.empty([3, 3])
+    assert a.dtype == np.float64
+
+
+def test_d1():
+    a = np.array([2, 3, 4])
+    assert a.shape == (3,)
+
+
+def test_d2():
+    '''多维数组'''
+    a = np.array([[1, 2], [3, 4]])
+    assert a.shape == (2, 2)
+
+
+def test_d2_empty():
+    '''指定最小的维度'''
+    a = np.array([1, 2, 3, 4, 5], ndmin=2)
+    assert a.shape == (1, 5)
+
+
+def test_complex():
+    '''复数数组'''
+    a = np.array([1, 2, 3], dtype=complex)
+    assert a[0] == 1. + 0.j
