@@ -1,6 +1,5 @@
-import matplotlib
-import matplotlib.pyplot as plt
 import matplotlib.gridspec as gridspec
+import matplotlib.pyplot as plt
 
 fig = plt.figure(constrained_layout=True)
 spec = gridspec.GridSpec(ncols=2, nrows=2, figure=fig)

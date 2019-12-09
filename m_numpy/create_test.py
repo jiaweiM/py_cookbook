@@ -17,7 +17,10 @@ def test_array():
     assert a.ndim == 1
     assert a.size == 3
     assert a.shape == (3,)
-    print(a.dtype)  # dtype vary among different OS
+    assert a.dtype == np.int32  # dtype vary among different OS
+
+    b = np.array([1.2, 3.4])
+    assert b.dtype == np.float64
 
 
 def test_array_tuple():
@@ -84,6 +87,12 @@ def test_empty():
 
     a = np.empty([3, 3])
     assert a.dtype == np.float64
+
+
+def test_empty_like():
+    a = ([1, 2, 3], [4, 5, 6])
+    x = np.empty_like(a)
+    assert x.shape == (2, 3)
 
 
 def test_d1():

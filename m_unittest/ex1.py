@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-from unittest import TestCase
 import unittest
+from unittest import TestCase
 
 __author__ = 'JiaweiMao'
 __version__ = '1.0.0'
@@ -20,6 +20,7 @@ class TestStringMethods(TestCase):
         # check that s.plit fails when the separator is not a string
         with self.assertRaises(TypeError):
             s.split(2)
+
 
 if __name__ == '__main__':
     unittest.main()
