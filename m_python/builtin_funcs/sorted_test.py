@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 '''
 The sorted() method returns a sorted list from the given iterable.
 
@@ -18,10 +16,12 @@ sorted() method accepts a reverse parameter as an optional argument.
 Setting reverse=True sorts the iterable in the descending order.
 '''
 
-
 # list 有 sort() 方法，效果和 sorted() 类似，差别是，不返回值，而是排序原始 list
-# 元音字母排序
+
 def test_list():
+    """
+    元音字母排序
+    """
     # vowels list
     py_list = ['e', 'a', 'u', 'o', 'i']
     sorted_list = sorted(py_list)

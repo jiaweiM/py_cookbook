@@ -52,7 +52,8 @@ def cuisine_checker():
     elif dish in italian:
         print(dish, "is an italian cuisine")
     else:
-        print("Based on whatever little knowledge I've, I can't tell which cuisine is", dish)
+        print(
+            "Based on whatever little knowledge I've, I can't tell which cuisine is", dish)
 
 
 city_checker()

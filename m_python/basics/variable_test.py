@@ -1,5 +1,9 @@
 
 
+def test_type():
+    x = 5
+    assert type(x) == int
+
 def test_swap():
     """交换两个变量的值"""
     a = 1
